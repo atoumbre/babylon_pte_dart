@@ -1,0 +1,53 @@
+name: scrypto_wallet
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  js: ^0.6.4
+  isolated_worker: ^0.1.1
+  get: ^4.6.1
+  elliptic: ^0.3.8
+  openapi_generator_annotations: ^3.3.0
+  flutter_svg: ^1.0.3
+  flutter_neumorphic: ^3.2.0
+  velocity_x: ^3.4.0
+  jdenticon_dart: ^2.0.0
+  file_picker: ^4.5.1
+  adaptive_dialog: ^1.6.3
+  
+  babylon_pte_api:
+    path: ../babylon_pte_api
+ 
+  babylon_pte_manifest:
+    path: ../babylon_pte_manifest 
+  
+  babylon_pte_extenstion:
+    path: ../babylon_pte_extenstion
+  ecdsa: ^0.0.4
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  openapi_generator: ^3.3.0+1
+  analyzer: ^3.0.0
+  build_runner: ^2.1.10
+  flutter_lints: ^2.0.1
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/appainter_theme.json
+    

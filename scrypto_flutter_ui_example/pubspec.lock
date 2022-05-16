@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "32.0.0"
+  adaptive_dialog:
+    dependency: "direct main"
+    description:
+      name: adaptive_dialog
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.6.3"
   analyzer:
     dependency: "direct dev"
     description:
@@ -15,6 +22,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0"
+  animations:
+    dependency: transitive
+    description:
+      name: animations
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.2"
   args:
     dependency: transitive
     description:
@@ -39,21 +53,21 @@ packages:
   babylon_pte_api:
     dependency: "direct main"
     description:
-      path: "../packages/babylon_pte_api"
+      path: "../babylon_pte_api"
       relative: true
     source: path
     version: "1.0.0"
   babylon_pte_extenstion:
     dependency: "direct main"
     description:
-      path: "../packages/babylon_pte_extenstion"
+      path: "../babylon_pte_extenstion"
       relative: true
     source: path
     version: "0.0.1"
   babylon_pte_manifest:
     dependency: "direct main"
     description:
-      path: "../packages/babylon_pte_manifest"
+      path: "../babylon_pte_manifest"
       relative: true
     source: path
     version: "0.0.1"
@@ -98,7 +112,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.10"
+    version: "2.1.11"
   build_runner_core:
     dependency: transitive
     description:
@@ -204,6 +218,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.6"
+  ecdsa:
+    dependency: "direct main"
+    description:
+      name: ecdsa
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   elliptic:
     dependency: "direct main"
     description:
@@ -232,6 +253,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.2"
+  file_picker:
+    dependency: "direct main"
+    description:
+      name: file_picker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.5.1"
   fixnum:
     dependency: transitive
     description:
@@ -258,6 +286,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.0"
+  flutter_plugin_android_lifecycle:
+    dependency: transitive
+    description:
+      name: flutter_plugin_android_lifecycle
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.6"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -324,6 +359,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+  intersperse:
+    dependency: transitive
+    description:
+      name: intersperse
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   intl:
     dependency: transitive
     description:
@@ -380,6 +422,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  macos_ui:
+    dependency: transitive
+    description:
+      name: macos_ui
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.4.1+1"
   matcher:
     dependency: transitive
     description:
@@ -408,6 +457,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  ninja_asn1:
+    dependency: transitive
+    description:
+      name: ninja_asn1
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   openapi_generator:
     dependency: "direct dev"
     description:
