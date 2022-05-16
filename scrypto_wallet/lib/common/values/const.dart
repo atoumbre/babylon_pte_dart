@@ -1,0 +1,3 @@
+// ignore_for_file: constant_identifier_names
+
+const XRD_TOKEN = "030000000000000000000000000000000000000000000000000004";
