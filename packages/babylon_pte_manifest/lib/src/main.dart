@@ -28,7 +28,7 @@ class ManifestBuilder {
      * @param bucketName The name of the new bucket
      * @returns 
      */
-  ManifestBuilder takeFromWorktop(resourceAddress, bucketName) {
+  ManifestBuilder takeFromWorktop(String resourceAddress, String bucketName) {
     instructions.add('TAKE_FROM_WORKTOP ResourceAddress("$resourceAddress") Bucket("$bucketName");');
     buckets[bucketName] = id_allocator++;
     return this;
@@ -42,7 +42,7 @@ class ManifestBuilder {
      * @param bucketName The name of the new bucket
      * @returns 
      */
-  ManifestBuilder takeFromWorktopByAmount(num amount, resourceAddress, bucketName) {
+  ManifestBuilder takeFromWorktopByAmount(num amount, String resourceAddress, String bucketName) {
     instructions.add('TAKE_FROM_WORKTOP_BY_AMOUNT Decimal("$amount") ResourceAddress("$resourceAddress") Bucket("$bucketName");');
     buckets[bucketName] = id_allocator++;
     return this;
@@ -56,7 +56,7 @@ class ManifestBuilder {
      * @param bucketName The name of the new bucket
      * @returns 
      */
-  ManifestBuilder takeFromWorktopByIds(List<String> nonFungibleIds, resourceAddress, bucketName) {
+  ManifestBuilder takeFromWorktopByIds(List<String> nonFungibleIds, String resourceAddress, String bucketName) {
     instructions.add('TAKE_FROM_WORKTOP_BY_IDS ${formatNonFungibleIds(nonFungibleIds)} ResourceAddress("$resourceAddress") Bucket("$bucketName");');
     buckets[bucketName] = id_allocator++;
     return this;
@@ -68,7 +68,7 @@ class ManifestBuilder {
      * @param bucketName The bucket name
      * @returns
      */
-  ManifestBuilder returnToWorktop(bucketName) {
+  ManifestBuilder returnToWorktop(String bucketName) {
     instructions.add('RETURN_TO_WORKTOP Bucket("$bucketName");');
     return this;
   }
@@ -79,7 +79,7 @@ class ManifestBuilder {
      * @param resourceAddress The resource address
      * @returns
      */
-  ManifestBuilder assertWorktopContains(resourceAddress) {
+  ManifestBuilder assertWorktopContains(String resourceAddress) {
     instructions.add('ASSERT_WORKTOP_CONTAINS ResourceAddress("$resourceAddress");');
     return this;
   }
@@ -91,7 +91,7 @@ class ManifestBuilder {
      * @param resourceAddress The resource address
      * @returns
      */
-  ManifestBuilder assertWorktopContainsByAmount(num amount, resourceAddress) {
+  ManifestBuilder assertWorktopContainsByAmount(num amount, String resourceAddress) {
     instructions.add('ASSERT_WORKTOP_CONTAINS_BY_AMOUNT Decimal("$amount") ResourceAddress("$resourceAddress");');
     return this;
   }
@@ -103,7 +103,7 @@ class ManifestBuilder {
      * @param resourceAddress The resource address
      * @returns
      */
-  ManifestBuilder assertWorktopContainsByIds(List<String> nonFungibleIds, resourceAddress) {
+  ManifestBuilder assertWorktopContainsByIds(List<String> nonFungibleIds, String resourceAddress) {
     instructions.add('ASSERT_WORKTOP_CONTAINS_BY_IDS ${formatNonFungibleIds(nonFungibleIds)} ResourceAddress("$resourceAddress");');
     return this;
   }
@@ -114,7 +114,7 @@ class ManifestBuilder {
      * @param proofName The name of the new proof
      * @returns 
      */
-  ManifestBuilder popFromAuthZone(proofName) {
+  ManifestBuilder popFromAuthZone(String proofName) {
     instructions.add('POP_FROM_AUTH_ZONE Proof("$proofName");');
     proofs[proofName] = id_allocator++;
     return this;
@@ -126,7 +126,7 @@ class ManifestBuilder {
      * @param proofName The proof name
      * @returns 
      */
-  ManifestBuilder pushToAuthZone(proofName) {
+  ManifestBuilder pushToAuthZone(String proofName) {
     instructions.add('PUSH_TO_AUTH_ZONE Proof("$proofName");');
     return this;
   }
@@ -148,7 +148,7 @@ class ManifestBuilder {
      * @param proofName The name of the new proof
      * @returns 
      */
-  ManifestBuilder createProofFromAuthZone(resourceAddress, proofName) {
+  ManifestBuilder createProofFromAuthZone(String resourceAddress, String proofName) {
     instructions.add('CREATE_PROOF_FROM_AUTH_ZONE ResourceAddress("$resourceAddress") Proof("$proofName");');
     proofs[proofName] = id_allocator++;
     return this;
@@ -162,7 +162,7 @@ class ManifestBuilder {
      * @param proofName The name of the new proof
      * @returns 
      */
-  ManifestBuilder createProofFromAuthZoneByAmount(num amount, resourceAddress, proofName) {
+  ManifestBuilder createProofFromAuthZoneByAmount(num amount, String resourceAddress, String proofName) {
     instructions.add('CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT Decimal("$amount") ResourceAddress("$resourceAddress") Proof("$proofName");');
     proofs[proofName] = id_allocator++;
     return this;
@@ -176,7 +176,7 @@ class ManifestBuilder {
       * @param proofName The name of the new proof
       * @returns 
       */
-  ManifestBuilder createProofFromAuthZoneByIds(List<String> nonFungibleIds, resourceAddress, proofName) {
+  ManifestBuilder createProofFromAuthZoneByIds(List<String> nonFungibleIds, String resourceAddress, String proofName) {
     instructions.add('CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS ${formatNonFungibleIds(nonFungibleIds)} ResourceAddress("$resourceAddress") Proof("$proofName");');
     proofs[proofName] = id_allocator++;
     return this;
@@ -190,7 +190,7 @@ class ManifestBuilder {
      * @param proofName The name of the new proof
      * @returns 
      */
-  ManifestBuilder createProofFromBucket(bucketName, proofName) {
+  ManifestBuilder createProofFromBucket(String bucketName, String proofName) {
     instructions.add('CREATE_PROOF_FROM_BUCKET Bucket("$bucketName") Proof("$proofName");');
     proofs[proofName] = id_allocator++;
     return this;
@@ -203,7 +203,7 @@ class ManifestBuilder {
      * @param clone The clone proof name
      * @returns 
      */
-  ManifestBuilder cloneProof(proofName, cloneName) {
+  ManifestBuilder cloneProof(String proofName, String cloneName) {
     instructions.add('CLONE_PROOF Proof("$proofName") Proof("$cloneName");');
     proofs[cloneName] = id_allocator++;
     return this;
@@ -215,7 +215,7 @@ class ManifestBuilder {
      * @param proofName The proof name
      * @returns 
      */
-  ManifestBuilder dropProof(proofName) {
+  ManifestBuilder dropProof(String proofName) {
     instructions.add('DROP_PROOF Proof("$proofName");');
     return this;
   }
@@ -228,7 +228,7 @@ class ManifestBuilder {
      * @param functionName  The function name
      * @param args The arguments, which must be in manifest format, e.g. `1u8`, `"string"`, `Bucket("name")`
      */
-  ManifestBuilder callFunction(packageAddress, blueprintName, functionName, List<String> args) {
+  ManifestBuilder callFunction(String packageAddress, String blueprintName, String functionName, List<String> args) {
     instructions.add('CALL_FUNCTION PackageAddress("$packageAddress") "$blueprintName" "$functionName" ${args.join(" ")};');
     return this;
   }
@@ -241,7 +241,7 @@ class ManifestBuilder {
      * @param args The arguments, which must be in manifest format, e.g. `1u8`, `"string"`, `Bucket("name")`
      * @returns 
      */
-  ManifestBuilder callMethod(componentAddress, methodName, List<String> args) {
+  ManifestBuilder callMethod(String componentAddress, String methodName, List<String> args) {
     instructions.add('CALL_METHOD ComponentAddress("$componentAddress") "$methodName" ${args.join(" ")};');
     return this;
   }
@@ -253,7 +253,7 @@ class ManifestBuilder {
      * @param methodName The method name
      * @returns 
      */
-  ManifestBuilder callMethodWithAllResources(componentAddress, methodName) {
+  ManifestBuilder callMethodWithAllResources(String componentAddress, String methodName) {
     instructions.add('CALL_METHOD_WITH_ALL_RESOURCES ComponentAddress("$componentAddress") "$methodName";');
     return this;
   }
@@ -276,7 +276,7 @@ class ManifestBuilder {
    * @param bucketName The name of the new bucket
    * @returns 
    */
-  ManifestBuilder withdrawFromAccount(accountAddress, resourceAddress) {
+  ManifestBuilder withdrawFromAccount(String accountAddress, String resourceAddress) {
     instructions.add('CALL_METHOD ComponentAddress("$accountAddress") "withdraw" ResourceAddress("$resourceAddress");');
     return this;
   }
@@ -289,7 +289,7 @@ class ManifestBuilder {
      * @param resourceAddress The resource address
      * @returns 
      */
-  ManifestBuilder withdrawFromAccountByAmount(accountAddress, num amount, resourceAddress) {
+  ManifestBuilder withdrawFromAccountByAmount(String accountAddress, num amount, String resourceAddress) {
     instructions.add('CALL_METHOD ComponentAddress("$accountAddress") "withdraw_by_amount" Decimal("$amount") ResourceAddress("$resourceAddress");');
     return this;
   }
@@ -302,7 +302,7 @@ class ManifestBuilder {
      * @param resourceAddress The resource address
      * @returns 
      */
-  ManifestBuilder withdrawFromAccountByIds(accountAddress, List<String> nonFungibleIds, resourceAddress) {
+  ManifestBuilder withdrawFromAccountByIds(String accountAddress, List<String> nonFungibleIds, String resourceAddress) {
     instructions.add('CALL_METHOD ComponentAddress("$accountAddress") "withdraw_by_ids" ${formatNonFungibleIds(nonFungibleIds)} ResourceAddress("$resourceAddress");');
     return this;
   }
@@ -315,7 +315,7 @@ class ManifestBuilder {
     * @param bucketName The name of the new bucket
     * @returns 
     */
-  ManifestBuilder createProofFromAccount(accountAddress, resourceAddress) {
+  ManifestBuilder createProofFromAccount(String accountAddress, String resourceAddress) {
     instructions.add('CALL_METHOD ComponentAddress("$accountAddress") "create_proof" ResourceAddress("$resourceAddress");');
     return this;
   }
@@ -328,7 +328,7 @@ class ManifestBuilder {
      * @param resourceAddress The resource address
      * @returns 
      */
-  ManifestBuilder createProofFromAccountByAmount(accountAddress, num amount, resourceAddress) {
+  ManifestBuilder createProofFromAccountByAmount(String accountAddress, num amount, String resourceAddress) {
     instructions.add('CALL_METHOD ComponentAddress("$accountAddress") "create_proof_by_amount" Decimal("$amount") ResourceAddress("$resourceAddress");');
     return this;
   }
@@ -341,7 +341,7 @@ class ManifestBuilder {
      * @param resourceAddress The resource address
      * @returns 
      */
-  ManifestBuilder createProofFromAccountByIds(accountAddress, List<String> nonFungibleIds, resourceAddress) {
+  ManifestBuilder createProofFromAccountByIds(String accountAddress, List<String> nonFungibleIds, String resourceAddress) {
     instructions.add('CALL_METHOD ComponentAddress("$accountAddress") "create_proof_by_ids" ${formatNonFungibleIds(nonFungibleIds)} ResourceAddress("$resourceAddress");');
     return this;
   }
@@ -357,6 +357,16 @@ class ManifestBuilder {
     return callMethod('020000000000000000000000000000000000000000000000000002', 'free_xrd', [])
         .takeFromWorktop('030000000000000000000000000000000000000000000000000004', 'xrd')
         .callFunction('010000000000000000000000000000000000000000000000000003', 'Account', 'new_with_resource', [auth, 'Bucket("xrd")']);
+  }
+
+  /**
+     * Deposit all worktop resource into the componentAddress account.
+     * @componentAddress The account component address
+     * @returns 
+     */
+  ManifestBuilder depositBatch(String componentAddress) {
+    callMethodWithAllResources(componentAddress, 'deposit_batch');
+    return this;
   }
 
   /**
